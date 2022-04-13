@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Edit VehicleDetail</title>
+</head>
+<body>
+<div align="center">
+    <h1>Update VehicleDetail</h1>
+    <br />
+    <form  th:action="@{/vehicle/{vehicleId} (vehicleId=${vehicle.vehicleId})}" th:object="${vehicle}"
+          method="POST">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>vehicleId:</td>
+                <td>
+                    <input type="text" th:field="*{vehicleId}"  />
+                </td>
+            </tr>
+            <tr>
+                <td>regAuthority:</td>
+                <td>
+                    <input type="text" th:field="*{regAuthority}" />
+                </td>
+            </tr>
+            <tr>
+                <td>RegNo:</td>
+                <td><input type="text" th:field="*{RegNo}" /></td>
+            </tr>
+            <tr>
+                <td>chassisNo:</td>
+                <td><input type="text" th:field="*{chassisNo}" /></td>
+            </tr>
+            <tr>
+                <td>ownerName:</td>
+                <td><input type="text" th:field="*{ownerName}" /></td>
+            </tr>
+            <tr>
+                <td>vehicleClass:</td>
+                <td>
+                    <input type="text" th:field="*{vehicleClass}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td>model:</td>
+                <td>
+                    <input type="text" th:field="*{model}" />
+                </td>
+            </tr>
+            <tr>
+                <td>regnUpto:</td>
+                <td><input type="text" th:field="*{regnUpto}" /></td>
+            </tr>
+            <tr>
+                <td>insuranceUpto:</td>
+                <td><input type="text" th:field="*{insuranceUpto}" /></td>
+            </tr>
+            <tr>
+                <td>EmiNorms:</td>
+                <td><input type="text" th:field="*{EmiNorms}" /></td>
+            </tr>
+            <td>regDate:</td>
+            <td>
+                <input type="text" th:field="*{regDate}" />
+            </td>
+            </tr>
+            <tr>
+                <td>engineNo:</td>
+                <td><input type="text" th:field="*{engineNo}" /></td>
+            </tr>
+            <tr>
+                <td>fuel:</td>
+                <td><input type="text" th:field="*{fuel}" /></td>
+            </tr>
+            <tr>
+                <td>TaxUpto:</td>
+                <td><input type="text" th:field="*{TaxUpto}" /></td>
+            </tr>
+            <tr>
+                <td>puccUpto:</td>
+                <td><input type="text" th:field="*{puccUpto}" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

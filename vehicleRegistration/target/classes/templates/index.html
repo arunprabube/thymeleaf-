@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Vehicle Details</title>
+</head>
+<body>
+<div align="center">
+    <h1>Vehicle List</h1>
+    <a href="/new">Create New VehicleDetail</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>vehicleId</th>
+            <th>regAuthority</th>
+            <th>RegNo</th>
+            <th>chassisNo</th>
+            <th>ownerName</th>
+            <th>vehicleClass</th>
+            <th>model</th>
+            <th>regnUpto</th>
+            <th>insuranceUpto</th>
+            <th>EmiNorms</th>
+            <th>regDate</th>
+            <th>engineNo</th>
+            <th>fuel</th>
+            <th>TaxUpto</th>
+            <th>puccUpto</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="vehicle : ${listVehicle}">
+            <td th:text="${vehicle.vehicleId}">vehicleId</td>
+            <td th:text="${vehicle.regAuthority}">regAuthority</td>
+            <td th:text="${vehicle.RegNo}">RegNo</td>
+            <td th:text="${vehicle.chassisNo}">chassisNo</td>
+            <td th:text="${vehicle.ownerName}">ownerName</td>
+            <td th:text="${vehicle.vehicleClass}">vehicleClass</td>
+            <td th:text="${vehicle.model}">model</td>
+            <td th:text="${vehicle.regnUpto}">regnUpto</td>
+            <td th:text="${vehicle.insuranceUpto}">insuranceUpto</td>
+            <td th:text="${vehicle.EmiNorms}">EmiNorms</td>
+            <td th:text="${vehicle.regDate}">regDate</td>
+            <td th:text="${vehicle.engineNo}">engineNo</td>
+            <td th:text="${vehicle.fuel}">fuel</td>
+            <td th:text="${vehicle.TaxUpto}">TaxUpto</td>
+            <td th:text="${vehicle.puccUpto}">puccUpto</td>
+
+            <td>
+                <a th:href = "@{/students/edit/{vehicleId}(vehicleId=${vehicle.vehicleId})}"
+                   class = "btn btn-primary">Update</a>
+
+                <a th:href = "@{/students/{id}(id=${vehicle.vehicleId})}"
+                   class = "btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
